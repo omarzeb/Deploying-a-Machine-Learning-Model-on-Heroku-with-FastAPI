@@ -1,0 +1,4 @@
+[core]
+    remote = c3
+['remote "c3"']
+    url = s3://udacity-c3
