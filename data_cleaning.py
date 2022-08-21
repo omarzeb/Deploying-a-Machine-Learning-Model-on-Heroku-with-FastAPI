@@ -18,4 +18,10 @@ for index, row in df.iterrows():
         clean_df = clean_df.append(row)
 
 
+clean_df.dropna(inplace=True)
+clean_df.drop_duplicates(inplace=True)
+clean_df.drop(" education-num", axis=1, inplace=True)
+clean_df.drop(" capital-gain", axis=1, inplace=True)
+clean_df.drop(" capital-loss", axis=1, inplace=True)
+
 clean_df.to_csv("./data/clean/census.csv")
