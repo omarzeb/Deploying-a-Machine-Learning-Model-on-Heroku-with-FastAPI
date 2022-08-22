@@ -68,14 +68,14 @@ def compute_score_per_slice(trained_model, test, encoder,
                             lb, path):
 
     cat_features = [
-        " workclass",
-        " education",
-        " marital-status",
-        " occupation",
-        " relationship",
-        " race",
-        " sex",
-        " native-country",
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
     ]
 
     with open('{}/models/slice_output.txt'.format(path), 'w') as f:
@@ -86,7 +86,7 @@ def compute_score_per_slice(trained_model, test, encoder,
                 x_test, y_test, _, _ = process_data(
                     temp_df,
                     categorical_features=cat_features, training=False,
-                    label=" salary", encoder=encoder, lb=lb)
+                    label="salary", encoder=encoder, lb=lb)
 
                 y_pred = trained_model.predict(x_test)
 

@@ -5,14 +5,14 @@ from ml.model import inference
 
 def run_inference(data):
     cat_features = [
-        " workclass",
-        " education",
-        " marital-status",
-        " occupation",
-        " relationship",
-        " race",
-        " sex",
-        " native-country",
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
     ]
     trained_model = pickle.load(open("./models/model.pkl", 'wb'))
     encoder = pickle.load(open("./models/encoder.pkl", 'wb'))

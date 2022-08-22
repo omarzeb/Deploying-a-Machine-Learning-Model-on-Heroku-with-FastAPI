@@ -22,17 +22,17 @@ def get_data(path):
 
 def model_training(train):
     cat_features = [
-        " workclass",
-        " education",
-        " marital-status",
-        " occupation",
-        " relationship",
-        " race",
-        " sex",
-        " native-country",
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
     ]
     X_train, y_train, encoder, lb = process_data(
-        train, categorical_features=cat_features, label=" salary", training=True
+        train, categorical_features=cat_features, label="salary", training=True
     )
 
     trained_model = train_model(X_train, y_train)
