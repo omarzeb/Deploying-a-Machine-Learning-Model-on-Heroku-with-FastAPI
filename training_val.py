@@ -1,9 +1,9 @@
 import os
-from train_model import get_data, model_training
-from val_model import validate
+from src.train_model import get_data, model_training
+from src.val_model import validate
 
 
-def go():
+def main():
     root_path = os.getcwd()
 
     train_df, test_df = get_data(root_path)
@@ -16,4 +16,4 @@ def go():
 
 if __name__ == "__main__":
 
-    go()
+    main()

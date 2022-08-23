@@ -2,8 +2,8 @@
 A small script to clean the data
 """
 import pandas as pd
-
-df = pd.read_csv("./data/raw/census.csv")
+import sys
+df = pd.read_csv(sys.path[0] + '/../data/raw/census.csv')
 
 clean_df = pd.DataFrame(columns = df.columns)
 for index, row in df.iterrows():
@@ -24,4 +24,4 @@ clean_df.drop(" education-num", axis=1, inplace=True)
 clean_df.drop(" capital-gain", axis=1, inplace=True)
 clean_df.drop(" capital-loss", axis=1, inplace=True)
 
-clean_df.to_csv("./data/clean/census.csv")
+clean_df.to_csv(sys.path[0] + "/../data/clean/census.csv")

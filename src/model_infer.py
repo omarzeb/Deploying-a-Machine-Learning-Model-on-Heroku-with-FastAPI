@@ -1,4 +1,5 @@
 import pickle
+import sys
 from ml.data import process_data
 from ml.model import inference
 
@@ -14,9 +15,9 @@ def run_inference(data):
         "sex",
         "native-country",
     ]
-    trained_model = pickle.load(open("./models/model.pkl", 'rb'))
-    encoder = pickle.load(open("./models/encoder.pkl", 'rb'))
-    lb = pickle.load(open("./models/lb.pkl", 'rb'))
+    trained_model = pickle.load(open(sys.path[0] + "/../models/model.pkl", 'rb'))
+    encoder = pickle.load(open(sys.path[0] + "/../models/encoder.pkl", 'rb'))
+    lb = pickle.load(open(sys.path[0] + "/../models/lb.pkl", 'rb'))
 
     X, _, _, _ = process_data(
         data,

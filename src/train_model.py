@@ -2,6 +2,7 @@
 
 from sklearn.model_selection import train_test_split
 import os
+import sys
 import pandas as pd
 import pickle
 
@@ -36,9 +37,7 @@ def model_training(train):
     )
 
     trained_model = train_model(X_train, y_train)
-    pickle.dump(trained_model, open("./models/model.pkl", 'wb'))
-    pickle.dump(encoder, open("./models/encoder.pkl", 'wb'))
-    pickle.dump(lb, open("./models/lb.pkl", 'wb'))
-# Proces the test data with the process_data function.
+    pickle.dump(trained_model, open(sys.path[0] + "/models/model.pkl", 'wb'))
+    pickle.dump(encoder, open(sys.path[0] + "/models/encoder.pkl", 'wb'))
+    pickle.dump(lb, open(sys.path[0] + "/models/lb.pkl", 'wb'))
 
-# Train and save a model.
