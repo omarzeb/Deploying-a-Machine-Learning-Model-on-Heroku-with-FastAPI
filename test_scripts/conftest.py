@@ -1,5 +1,4 @@
 import pytest
-import yaml
 import sys
 import pandas as pd
 from fastapi.testclient import TestClient
