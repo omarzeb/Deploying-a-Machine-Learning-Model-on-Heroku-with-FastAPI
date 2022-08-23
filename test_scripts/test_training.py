@@ -1,5 +1,5 @@
 import os
-from train_model import get_data, model_training
+from src.train_model import get_data, model_training
 
 
 def test_get_data():

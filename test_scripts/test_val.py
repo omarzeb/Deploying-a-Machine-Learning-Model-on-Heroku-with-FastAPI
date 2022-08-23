@@ -1,6 +1,6 @@
 import os
-from val_model import validate
-from train_model import get_data
+from src.val_model import validate
+from src.train_model import get_data
 
 def test_model(clean_data):
     _, test_df = get_data('./')

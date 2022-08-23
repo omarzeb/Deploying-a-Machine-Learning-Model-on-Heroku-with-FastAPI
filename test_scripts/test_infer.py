@@ -1,4 +1,4 @@
-from model_infer import run_inference
+from src.model_infer import run_inference
 
 
 def test_run_inference_low(inference_data_low):

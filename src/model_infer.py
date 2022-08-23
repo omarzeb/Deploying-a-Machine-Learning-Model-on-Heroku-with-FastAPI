@@ -14,9 +14,9 @@ def run_inference(data):
         "sex",
         "native-country",
     ]
-    trained_model = pickle.load(open("./models/model.pkl", 'wb'))
-    encoder = pickle.load(open("./models/encoder.pkl", 'wb'))
-    lb = pickle.load(open("./models/lb.pkl", 'wb'))
+    trained_model = pickle.load(open("./models/model.pkl", 'rb'))
+    encoder = pickle.load(open("./models/encoder.pkl", 'rb'))
+    lb = pickle.load(open("./models/lb.pkl", 'rb'))
 
     X, _, _, _ = process_data(
         data,
