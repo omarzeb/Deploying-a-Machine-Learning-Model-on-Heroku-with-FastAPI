@@ -46,7 +46,7 @@ jobs:
         run: dvc pull
       # Run Flake 8
       - name: Check Path
-      - run: |
+        run: |
           pwd
       - name: Lint with Flake8
         run: |
