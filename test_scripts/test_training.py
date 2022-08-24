@@ -18,6 +18,6 @@ def test_model_training():
     train_df, _ = get_data('./')
     model_training(train_df)
 
-    assert os.path.isfile(sys.path[0] + "/../models/model.pkl")
-    assert os.path.isfile(sys.path[0] + "/../models/encoder.pkl")
-    assert os.path.isfile(sys.path[0] + "/../models/lb.pkl")
+    assert os.path.isfile("./models/model.pkl")
+    assert os.path.isfile("./models/encoder.pkl")
+    assert os.path.isfile("./models/lb.pkl")
