@@ -1,5 +1,4 @@
 import pytest
-import sys
 import pandas as pd
 from fastapi.testclient import TestClient
 from main import app
@@ -10,7 +9,7 @@ def clean_data(raw_data):
     """
     Get dataset
     """
-    df = pd.read_csv(sys.path[0] + "/../data/clean/census.py")
+    df = pd.read_csv("./data/clean/census.py")
     return df
 
 
