@@ -5,7 +5,7 @@ from main import app
 
 
 @pytest.fixture
-def clean_data(raw_data):
+def clean_data():
     """
     Get dataset
     """
