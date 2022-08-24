@@ -9,8 +9,7 @@ def main():
     train_df, test_df = get_data(root_path)
 
     model_training(train_df)
-
-
+    
     validate(test_df, root_path)
 
 

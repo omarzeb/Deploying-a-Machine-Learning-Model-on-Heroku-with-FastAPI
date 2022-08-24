@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 class ModelInput(BaseModel):
     age: int
+    
     workclass: Literal['State-gov',
                        'Self-emp-not-inc',
                        'Private',
@@ -20,7 +21,6 @@ class ModelInput(BaseModel):
         'Assoc-acdm', '7th-8th', 'Doctorate', 'Assoc-voc', 'Prof-school',
         '5th-6th', '10th', 'Preschool', '12th', '1st-4th']
     
-    education_num: int
     
     marital_status: Literal["Never-married",
                             "Married-civ-spouse",
@@ -52,11 +52,7 @@ class ModelInput(BaseModel):
                   "Amer-Indian-Eskimo", "Other", "Black"]
     
     sex: Literal["Female", "Male"]
-    
-    capital_gain: int
-    
-    capital_loss: int
-    
+        
     hours_per_week: int
     
     native_country: Literal[
@@ -77,14 +73,11 @@ class ModelInput(BaseModel):
                 "workclass": 'State-gov',
                 "fnlgt": 77516,
                 "education": 'Bachelors',
-                "education_num": 13,
                 "marital_status": "Never-married",
                 "occupation": "Tech-support",
                 "relationship": "Unmarried",
                 "race": "White",
                 "sex": "Female",
-                "capital_gain": 2000,
-                "capital_loss": 0,
                 "hours_per_week": 35,
                 "native_country": 'United-States'
             }

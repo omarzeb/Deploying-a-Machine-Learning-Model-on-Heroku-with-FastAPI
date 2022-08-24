@@ -1,6 +1,8 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 from .data import process_data
+from sklearn.metrics import classification_report
+import pandas as pd
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
     """
@@ -42,7 +44,14 @@ def compute_model_metrics(y, preds):
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
+
     return precision, recall, fbeta
+
+
+def save_model_metrics(y, preds, path):
+    class_report = classification_report(preds, y.to_numpy(), output_dict=True)
+    report_df = pd.DataFrame(class_report).transpose()
+    report_df.to_csv("{}/models/classification_report.csv".format(path))
 
 
 def inference(model, X):

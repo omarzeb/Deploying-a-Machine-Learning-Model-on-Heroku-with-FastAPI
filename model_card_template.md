@@ -14,7 +14,7 @@ Data was sourced from https://archive.ics.uci.edu/ml/datasets/census+income ; Us
 Using the same source as above; 20% of the split data was used for validation.
 
 ## Metrics
-The model was evaluated using Accuracy score, F1 beta score, Precision and Recall. The model F1 score is around 70%
+The model was evaluated using Accuracy score, F1 beta score, Precision and Recall. The model F1 score is around 82%
 
 ## Ethical Considerations
 The metics were also calculated on data slices. Due to data imbalance the model may potentially discriminate people.
