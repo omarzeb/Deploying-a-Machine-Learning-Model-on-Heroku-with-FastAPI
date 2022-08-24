@@ -9,7 +9,7 @@ def clean_data():
     """
     Get dataset
     """
-    df = pd.read_csv("./data/clean/census.py")
+    df = pd.read_csv("./data/clean/census.csv")
     return df
 
 
