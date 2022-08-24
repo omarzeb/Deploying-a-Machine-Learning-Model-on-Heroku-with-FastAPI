@@ -44,6 +44,9 @@ def inference_data_low():
                  }
     df = pd.DataFrame(data=data_dict.values(),
                       index=data_dict.keys()).T
+
+    print("low dataframe")
+    print(df)
     return df
 
 
@@ -63,6 +66,8 @@ def inference_data_high():
                  }
     df = pd.DataFrame(data=data_dict.values(),
                       index=data_dict.keys()).T
+    print("high dataframe")
+    print(df)
     return df
 
 

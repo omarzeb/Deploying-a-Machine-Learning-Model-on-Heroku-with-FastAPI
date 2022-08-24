@@ -5,6 +5,9 @@ from src.train_model import get_data, model_training
 
 def test_get_data():
     train_df, test_df = get_data('./')
+    print("Columns")
+    for col in train_df.columns:
+        print(col)
 
     assert train_df.shape[0] > 0
     assert train_df.shape[1] == 12
