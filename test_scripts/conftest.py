@@ -29,7 +29,7 @@ def test_data(clean_data):
 
 
 @pytest.fixture
-def inference_data():
+def inference_data_low():
     data_dict = {'age': 19,
                  'workclass': 'Private',
                  'fnlgt': 77516,
@@ -44,6 +44,27 @@ def inference_data():
                  }
     df = pd.DataFrame(data=data_dict.values(),
                       index=data_dict.keys()).T
+
+    return df
+
+# 37   Private  280464   Some-college   Married-civ-spouse   Exec-managerial      Husband   Black   Male             80   United-States
+@pytest.fixture
+def inference_data_high():
+
+    data_dict = {'age': 37,
+                 'workclass': ' Private',
+                 'fnlgt': 284582,
+                 'education': ' Masters',
+                 'marital-status': ' Married-civ-spouse',
+                 'occupation': ' Exec-managerial',
+                 'relationship': ' Wife',
+                 'race': ' White',
+                 'sex': ' Female',
+                 'hours-per-week': 40,
+                 'native-country': ' United-States'
+                 }
+    df = pd.DataFrame(data=data_dict.values(),
+                    index=data_dict.keys()).T
 
     return df
 

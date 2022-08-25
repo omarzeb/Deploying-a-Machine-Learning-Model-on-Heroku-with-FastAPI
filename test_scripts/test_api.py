@@ -9,15 +9,16 @@ def test_post_right(client):
                                      'workclass': 'Private',
                                      'fnlgt': 149184,
                                      'education': 'HS-grad',
-                                     'marital_status': 'Never-married',
+                                     'marital-status': 'Never-married',
                                      'occupation': 'Prof-specialty',
                                      'relationship': 'Not-in-family',
                                      'race': 'White',
                                      'sex': 'Male',
-                                     'hours_per_week': 60,
-                                     'native_country': 'United-States'
+                                     'hours-per-week': 60,
+                                     'native-country': 'United-States'
                 })
 
+    print(request.json())
     assert request.status_code == 200
 
 

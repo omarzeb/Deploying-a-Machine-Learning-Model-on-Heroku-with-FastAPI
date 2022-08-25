@@ -1,9 +1,15 @@
 from typing import Literal
 
 import pandas as pd
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+
+def remove_hypens(string: str) -> str:
+    res = '_'.join(word for word in string.split('-'))
+    return res[0].lower() + res[1:]
+
 
 class ModelInput(BaseModel):
+    alias_generator = remove_hypens
     age: int
     
     workclass: Literal['State-gov',
@@ -28,7 +34,7 @@ class ModelInput(BaseModel):
                             "Married-spouse-absent",
                             "Separated",
                             "Married-AF-spouse",
-                            "Widowed"]
+                            "Widowed"] = Field(alias="marital-status")
     
     occupation: Literal["Tech-support",
                         "Craft-repair",
@@ -53,7 +59,7 @@ class ModelInput(BaseModel):
     
     sex: Literal["Female", "Male"]
         
-    hours_per_week: int
+    hours_per_week: int = Field(alias="hours-per-week")
     
     native_country: Literal[
         'United-States', 'Cuba', 'Jamaica', 'India', 'Mexico',
@@ -64,7 +70,7 @@ class ModelInput(BaseModel):
         'Italy', 'China', 'South', 'Japan', 'Yugoslavia', 'Peru',
         'Outlying-US(Guam-USVI-etc)', 'Scotland', 'Trinadad&Tobago',
         'Greece', 'Nicaragua', 'Vietnam', 'Hong', 'Ireland', 'Hungary',
-        'Holand-Netherlands']
+        'Holand-Netherlands'] = Field(alias="native-country")
 
     class Config:
         schema_extra = {

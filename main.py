@@ -20,7 +20,7 @@ async def get_items():
 @app.post("/")
 async def inference(input_data: ModelInput):
 
-    input_data = input_data.dict()
+    
 
     columns=[ 
       'age',
@@ -36,16 +36,8 @@ async def inference(input_data: ModelInput):
       'native-country'
     ]
 
-    change_keys = [
-      ["marital-status","marital_status"],
-      ["hours-per-week","hours_per_week"],
-      ["native-country","native_country"]
-    ]
+    input_data = input_data.dict(by_alias=True)
 
-    for new_key, old_key in change_keys:
-        input_data[new_key] = input_data.pop(old_key)
-    print("input_data")
-    print(input_data)
     input_df = pd.DataFrame(data=input_data.values(), index=input_data.keys()).T
     input_df = input_df[columns]
 
