@@ -51,16 +51,16 @@ def inference_data_low():
 @pytest.fixture
 def inference_data_high():
 
-    data_dict = {'age': 37,
-                 'workclass': ' Private',
-                 'fnlgt': 284582,
-                 'education': ' Masters',
+    data_dict = {'age': 52,
+                 'workclass': ' Self-emp-not-inc',
+                 'fnlgt': 209642,
+                 'education': ' HS-grad',
                  'marital-status': ' Married-civ-spouse',
                  'occupation': ' Exec-managerial',
-                 'relationship': ' Wife',
+                 'relationship': ' Husband',
                  'race': ' White',
-                 'sex': ' Female',
-                 'hours-per-week': 40,
+                 'sex': ' Male',
+                 'hours-per-week': 45,
                  'native-country': ' United-States'
                  }
     df = pd.DataFrame(data=data_dict.values(),

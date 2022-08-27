@@ -28,3 +28,4 @@ def run_inference(data):
     prediction = lb.inverse_transform(pred)[0]
 
     return prediction
+
